@@ -1,65 +1,67 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="container mx-auto grid grid-cols-12 gap-8">
+      {/* Content */}
+      <div className="col-span-9 mb-32">
+        <ul className="grid grid-cols-3 gap-8 gap-x-16 mt-32">
+          {/* Item */}
+          <li>
+            <a href="/products/macbook-air-13">
+              <div className="box">
+                <img
+                  className="box-image"
+                  src="https://dl.airtable.com/.attachmentThumbnails/8e16d5df300247a0ffbd6093adc01ff8/ae4a8eec"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">MacBook Air 13</div>
+              <div>$60000</div>
+            </a>
+          </li>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+          {/* Item */}
+          <li>
+            <a href="/products/monitores-dell-p2314h">
+              <div className="box">
+                <img
+                  className="box-image"
+                  src="https://dl.airtable.com/.attachmentThumbnails/b18536754492c56bb38a9f19ce493d87/b7689692"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">Monitores Dell P2314H</div>
+              <div>$60000</div>
+            </a>
+          </li>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          {/* Item */}
+          <li>
+            <a href="/products/macbook-12">
+              <div className="box">
+                <img
+                  className="box-image"
+                  src="https://dl.airtable.com/.attachmentThumbnails/7e576719b50dcd873635f0b521343f0e/cdd08206"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">MacBook 12</div>
+              <div>$200000</div>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      {/* Sidebar */}
+      <div className="col-start-11 col-span-2 mt-16">
+        <div className="sticky top-0 pt-16">
+          <h1 className="text-2xl">
+            <a href="/">La Tienda</a>
+          </h1>
+          <p className="text-l text-gray-600">Marketplace en vivo.</p>
+          <div className="mt-16">
+            <a href="/publica" className="underline text-orange-600">
+              Publicá
+            </a>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      </div>
     </div>
-  )
+  );
 }
