@@ -4,7 +4,7 @@ export default function ProductView({
   description,
   user,
   reference,
-  imageUrl,
+  media,
 }) {
   return (
     <div className="col-span-9">
@@ -32,7 +32,7 @@ export default function ProductView({
           </div>
         </div>
         <div className="col-span-7 mt-32">
-          <img src={imageUrl} />
+          <img src={media[0]?.url} />
         </div>
       </div>
     </div>
