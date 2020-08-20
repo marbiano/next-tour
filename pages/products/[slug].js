@@ -2,7 +2,7 @@ import Sidebar from '../../components/Sidebar';
 import ProductView from '../../components/ProductView';
 
 const productData = {
-  title: 'MacBook 12',
+  title: 'Dynamic product',
   price: 200000,
   description: `Macbook de 12'' con funda y cargador. Es de 256GB SSD y 8G de
                 disco con Retina Display. Anda perfecto. La reemplacé por una
