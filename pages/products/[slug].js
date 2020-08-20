@@ -33,8 +33,6 @@ export default function Product() {
     return <DefaultErrorPage statusCode={product.error} />;
   }
 
-  console.log(product);
-
   return (
     <div className="container mx-auto grid grid-cols-12 gap-8">
       <ProductView {...product.fields} />
