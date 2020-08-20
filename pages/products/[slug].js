@@ -1,5 +1,5 @@
 import DefaultErrorPage from 'next/error';
-import { fetchProductBySlug } from '../../lib/api';
+import { fetchProductBySlug, fetchAllProducts } from '../../lib/api';
 import ProductView from '../../components/ProductView';
 import Sidebar from '../../components/Sidebar';
 
@@ -16,7 +16,7 @@ export default function Product({ product }) {
   );
 }
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const product = await fetchProductBySlug(
     Array.isArray(slug) ? slug[0] : slug,
@@ -28,11 +28,12 @@ export const getServerSideProps = async ({ params }) => {
   };
 };
 
-// export const getStaticPaths = async () => {
-//   const products = await fetchAllProducts();
-//   return {
-//     paths: products.map((product) => ({
-//       params: { slug: product.fields.slug },
-//     })),
-//   };
-// };
+export const getStaticPaths = async () => {
+  const products = await fetchAllProducts();
+  return {
+    paths: products.map((product) => ({
+      params: { slug: product.fields.slug },
+    })),
+    fallback: false,
+  };
+};
